@@ -1,0 +1,48 @@
+https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/fuzz-Bo0oM.txt
+(
+ffuf -u https://yahoo.com/FUZZ/ -w ds -e .php,.txt  (duoi can tim)
+ffuf -u https://yahoo.com/FUZZ/ -w ds -H "Content-Type: application/x-www-form-urlencoded" -u https://domain.com/admin/ -X POST -d "username=admin&password=FUZZ" -fc 403  (FUZZ voi POST DATA) (bo 403)
+)
+
+
+-------------------------------------------------------
+python3 dirsearch.py -u https://cs13.bluehost.com -e php,html,json,js,jsp,zip,git,rar,txt,asp,aspx
+python3 dirsearch.py -e php,html,js -u https://target --exclude-texts "403 Forbidden"
+
+
+-------------------------------------------------------
+cat domains.txt | httprobe -p http:81 -p https:8443
+ cat domains.txt | httprobe -c 50
+ 
+cat hosts.txt | httpx 
+httpx -l hosts.txt -silent
+subfinder -d hackerone.com | httpx -title -tech-detect -status-code -title -follow-redirects
+subfinder -d hackerone.com | httpx --status-code 
+
+
+echo "domain.com" | waybackurls | httpx -- or -status-code 
+subfinder -d domain.com | httpx or httprobe
+subfinder -d domain.com -o output.txt
+echo hackerone.com | subfinder -silent | httpx -silent (show only subdomains in output)
+
+subfinder -d hackerone.com -o output.json -oJ -nW (oJ: luu duoi dang json ; nW: xoa cac subdomain ko ton tai)
+▶ cat output.json
+
+------------------------------------------------------
+./SubOver -l subdomains.txt -(xem o duoi)
+https://github.com/Ice3man543/SubOver
+
+
+-------------------------------------------------------
+waybackurls yahoo.com (>> yahoo.txt) | httpx --status-code 
+
+$ cat domains.txt | gau -t 5
+$ gau example.com | httpx or httprobe
+$ gau -o example-urls.txt example.com
+
+
+
+-------------------------------------------------------
+assetfinder --subs-only bol.io | httpx or httprobe
+
+./findomain-linux -t domain.com -u domain.txt | httpx or httprobe
