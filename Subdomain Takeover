@@ -1,0 +1,14 @@
+https://dnschecker.org/all-dns-records-of-domain.php?query=extsts.gslb2.comcast.com.&rtype=CNAME&dns=google
+
+https://dnsdumpster.com/
+
+host [IP or domain]
+whois domain | grep "OrgName"
+
+    List of subdomains
+        ./subzy -targets list.txt
+        ./subzy -targets ~/Name.txt
+
+    Single or multiple targets
+        ./subzy -target test.google.com
+        ./subzy -target test.google.com,https://test.yahoo.com
