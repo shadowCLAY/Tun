@@ -1,5 +1,6 @@
 python sqlmap.py -u "URL" --batch
 
+python3 http://sqlmap.py -r req.txt --batch --force-ssl --level 5 --risk 3 --dbs --hostname --current-user -p "username"
 
 python sqlmap.py -r sql.txt --current-db --level 5 --risk 3 --dbs --force-ssl
 
